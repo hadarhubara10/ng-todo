@@ -5,17 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './component/header/header.component';
-import { MatIconModule } from '@angular/material/icon';
+import { MaterialModule } from './material/material.module';
+import { TodoListComponent } from './component/todo-list/todo-list.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, TodoListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
