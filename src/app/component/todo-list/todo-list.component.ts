@@ -17,10 +17,17 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.todoService.getTodos().subscribe((data) => {
         this.todos = data;
-      }) 
+      })
     );
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  public onTodoClick(todo: ITodo, index: number): void {
+    this.todoService.getSelectedTodo().subscribe((data) => {
+      data.selected = false;
+    });
+    this.todoService.setSelectedTodo(todo);
+    this.todos[index].selected = true;
   }
 }
