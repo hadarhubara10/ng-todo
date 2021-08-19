@@ -12,6 +12,7 @@ import { TodoListComponent } from './component/todo-list/todo-list.component';
 import { TodoComponent } from './component/todo/todo.component';
 import { NewTodoComponent } from './component/new-todo/new-todo.component';
 import { TodoContainerComponent } from './todo-container/todo-container.component';
+import { CountDownComponent } from './component/count-down/count-down.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { TodoContainerComponent } from './todo-container/todo-container.componen
     TodoComponent,
     NewTodoComponent,
     TodoContainerComponent,
+    CountDownComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,8 @@ export class NewTodoComponent implements OnInit {
   @ViewChild('f') form: NgForm;
   ngOnInit(): void {}
 
+  public minDate: Date = new Date();
+
   public onTodoSubmit(): void {
     if (this.form.valid) {
       const formValues = this.form.form.value;

@@ -42,4 +42,26 @@ export class TodoService {
     this._todoSubject.next(exitStingTodos);
     localStorage.setItem('todos', JSON.stringify(exitStingTodos));
   }
+  public onTodoComplete(id: string): void {
+    const exitStingTodos: ITodo[] = this._todoSubject.value;
+    exitStingTodos.forEach((todo) => {
+      if (todo.id == id) {
+        todo.isCompleted = true;
+        this._todoSubject.next(exitStingTodos);
+        localStorage.setItem('todos', JSON.stringify(exitStingTodos));
+      }
+    });
+  }
+  public onTodoArchived(id: string): void {
+    const exitStingTodos: ITodo[] = this._todoSubject.value;
+    exitStingTodos.forEach((todo) => {
+      if (todo.id == id) {
+        console.log(todo);
+
+        todo.isArchived = true;
+        this._todoSubject.next(exitStingTodos);
+        localStorage.setItem('todos', JSON.stringify(exitStingTodos));
+      }
+    });
+  }
 }
