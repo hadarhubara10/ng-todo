@@ -13,15 +13,13 @@ export class TodoListComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   constructor(private todoService: TodoService) {}
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
   public onTodoClick(todo: ITodo, index: number): void {
     this.todoService.getSelectedTodo().subscribe((data) => {
-      data.selected = false;
+      if (data) data.selected = false;
     });
     this.todoService.setSelectedTodo(todo);
     this.todos[index].selected = true;
